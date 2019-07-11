@@ -1,9 +1,9 @@
 const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
+var prod = process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'dev';
 
 module.exports = {
   wpyExt: '.wpy',
-  eslint: true,
+  eslint: true,  // 
   cliLogs: !prod,
   build: {
     web: {
@@ -63,10 +63,10 @@ if (prod) {
       filter: /\.(jpg|png|jpeg)$/,
       config: {
         jpg: {
-          quality: 80
+          quality: 60
         },
         png: {
-          quality: 80
+          quality: 60
         }
       }
     }
